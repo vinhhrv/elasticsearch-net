@@ -33,7 +33,7 @@ namespace ApiGenerator.Domain.Code.LowLevel
 
 				var url = Path.TrimStart('/');
 				var options = Url.OriginalParts?.Select(p => p.Key) ?? Enumerable.Empty<string>();
-				
+
 				var pattern = string.Join("|", options);
 				var urlCode = $"\"{url}\"";
 				if (Path.Contains("{"))
@@ -44,5 +44,7 @@ namespace ApiGenerator.Domain.Code.LowLevel
 				return urlCode;
 			}
 		}
+
+		public string MapsApiArguments { get; set; }
 	}
 }
